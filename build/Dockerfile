@@ -22,12 +22,8 @@ WORKDIR /unicorn
 # Install required gems using bundler
 RUN bundle install
 
-#Install curl 
-RUN apt-get update && apt-get install -y curl
-
-
-
 # Set the default command to execute    
 # when creating a new container
 CMD bundle exec rackup --port 8080 --host 0.0.0.0
+CMD curl http://unicornpoo.herokuapp.com/update/mariadelmarrg/complete 
 
